@@ -18,7 +18,14 @@ namespace GonzalezA_CBootcamp
             //Operations.Logic();
             //Operations.Ternary();
 
-            MiniDC.StartDC();
+            //Statements.BranchingIf();
+            Statements.Switching();
+            //Statements.ForLoop();
+            //Statements.WhileLoop();
+            //Statements.LoopingArrays();
+            //Statements.ForEachIterations();
+
+            //MiniDC.StartDC();
         }
     }
 }
