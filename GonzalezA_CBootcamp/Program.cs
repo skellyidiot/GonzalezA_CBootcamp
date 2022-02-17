@@ -19,13 +19,23 @@ namespace GonzalezA_CBootcamp
             //Operations.Ternary();
 
             //Statements.BranchingIf();
-            Statements.Switching();
+            //Statements.Switching();
             //Statements.ForLoop();
             //Statements.WhileLoop();
             //Statements.LoopingArrays();
             //Statements.ForEachIterations();
 
             //MiniDC.StartDC();
+
+            //ErrorTrapping.Crash();
+            //ErrorTrapping.SafeCrash();
+
+            StringWork.StringFeatures();
+            StringWork.Manipulate();
+            StringWork.JoinAndCompare();
+            StringWork.FindingSubStrings();
+            StringWork.Formatting();
+            StringWork.DateStrings();
         }
     }
 }

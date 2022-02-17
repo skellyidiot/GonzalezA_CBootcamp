@@ -57,7 +57,7 @@ namespace GonzalezA_CBootcamp
                     break;
                 case 5:
                     dude = "James";
-                    dialogue = "\n*James chugs a school-friendly beverage!";
+                    dialogue = "\n*James chugs a [SCHOOL-FRIENDLY] beverage!";
                     break;
                 default:
                     dude = "Jesse";

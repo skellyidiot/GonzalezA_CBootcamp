@@ -10,10 +10,13 @@ namespace GonzalezA_CBootcamp
         public static void StartDC()
         {
             Console.Clear();
-            Console.WriteLine("Mini Dungeon Crawler. Welcome to D'nal!");
-            Console.Write("\n\tWhat is your name, dear player? >");
+            Console.WriteLine("Mini Dungeon Crawler.");
+            Console.Write("\n\tName your creation. >");
             string pName = Console.ReadLine();
             Player player = new Player(0, pName, 40);
+            Console.WriteLine("Hmm... {0}.. An interesting name...", pName);
+            Console.WriteLine("Well, you chose it for a reason. Sending you to ARCADIA...");
+            Console.ReadLine();
 
             //Create some monsters...
             Player[] monster = new Player[6];
@@ -75,7 +78,9 @@ namespace GonzalezA_CBootcamp
 
                         if(player.Health <= 0)
                         {
-                            Console.WriteLine("You are dead. No big surprise.");
+                            Console.WriteLine("Hm. This experiment failed quickly.");
+                            Console.WriteLine("You killed your creation already. How disappointing.");
+                            Console.WriteLine("I'll have to find another candidate. As for you...");
                             return;
                         }
                         if(monster[mID].Health <= 0)
@@ -99,11 +104,11 @@ namespace GonzalezA_CBootcamp
                 }
 
                 //Ask user for commands
-                Console.Write("Please enter a command. >");
+                Console.Write("What do you want your creation to do? >");
                 string cmd = Console.ReadLine().ToLower().Trim();
                 if(cmd == "q" || cmd == "quit" || cmd == "exit")
                 {
-                    Console.WriteLine("Thank you for playing.");
+                    Console.WriteLine("... i'll see you again.");
                     return;
                 }
 
@@ -120,6 +125,22 @@ namespace GonzalezA_CBootcamp
 
                 //map
                 if (cmd == "m" || cmd == "map") Location.DrawMap(location, pX, pY);
+
+                try
+                {
+                    if (cmd == "save") DataManagement.SavePlayerData(player);
+                } catch
+                {
+                    Console.WriteLine("Could not save player data");
+                }
+
+                try
+                {
+                    if (cmd == "load") player = DataManagement.LoadPlayerData(player);
+                } catch
+                {
+                    Console.WriteLine("Could not restore player data");
+                }
             }   //end of while(true)
         }
     }

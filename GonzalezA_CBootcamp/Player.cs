@@ -7,9 +7,11 @@ namespace GonzalezA_CBootcamp
     public class Player
     {
         //Properties
-        public int ID;               //0 is the real player. 1,2,3... are for monsters, NPCs, etc
-        public string Name;
-        public int Health;
+        public int ID { get; set; }               //0 is the real player. 1,2,3... are for monsters, NPCs, etc
+        public string Name { get; set; }
+        public int Health { get; set; }
+
+        public Player() { }
 
         public Player(int iD, string name, int health)
         {
