@@ -15,7 +15,7 @@ namespace GonzalezA_CBootcamp
             string pName = Console.ReadLine();
             Player player = new Player(0, pName, 40);
             Console.WriteLine("Hmm... {0}.. An interesting name...", pName);
-            Console.WriteLine("Well, you chose it for a reason. Sending you to ARCADIA...");
+            Console.WriteLine("Well, you chose it for a reason. Welcome to ARCADIA...");
             Console.ReadLine();
 
             //Create some monsters...
@@ -33,10 +33,10 @@ namespace GonzalezA_CBootcamp
             //create a 2D array of locations
             Location[,] location = new Location[maxX, maxY];  //make lots of null locations
 
-            location[5, 5] = new Location("Home", "You sit in a comfy chair near a fire.", 0);
+            location[5, 5] = new Location("Home", "A strange yet familiar house. You find comfort by the warm fireplace.", 0);
             location[4, 4] = new Location("Getel", "A small town with a magical fountain.", 2);
             location[7, 7] = new Location("A Huge Cavern", "You hear rumbling and stomping sounds.", 5);
-            location[9, 7] = new Location("A Weeping Willow", "The branches of the willow sooth you.", 0);
+            location[9, 7] = new Location("The Soul Springs", "The ponds glimmer, filled with a blueish liquid. You step in the ponds, and feel refreshed.", 0);
 
 
             //Place the player at home
@@ -49,8 +49,10 @@ namespace GonzalezA_CBootcamp
             //Game start!
             while(true)                                       //basically a forever loop
             {
+                Console.Clear();
+
                 //display location and health
-                Console.WriteLine("\n-----------------------------");
+                Console.WriteLine("\n---------------------------------");
                 Console.WriteLine("HEALTH: {0}", player.Health);
                 Console.WriteLine("LOCATION: {0}, {1}", pX, pY);
 
@@ -78,10 +80,15 @@ namespace GonzalezA_CBootcamp
 
                         if(player.Health <= 0)
                         {
-                            Console.WriteLine("Hm. This experiment failed quickly.");
+                            Console.WriteLine("**** You fall to the ground after landing your final blow. You died. ****");
+                            Console.WriteLine("\nHm. This experiment failed quickly.");
+                            Console.ReadLine();
                             Console.WriteLine("You killed your creation already. How disappointing.");
+                            Console.ReadLine();
                             Console.WriteLine("I'll have to find another candidate. As for you...");
+                            Console.ReadLine();
                             return;
+                            
                         }
                         if(monster[mID].Health <= 0)
                         {
@@ -96,7 +103,7 @@ namespace GonzalezA_CBootcamp
                 //healing or other options
                 if(pX == 9 && pY == 7)
                 {
-                    Console.WriteLine("You can feel your wounds start to heal!");
+                    Console.WriteLine("\n**** Their wounds start to heal, their body refreshed and ready for another round of fighting. ****");
                     player.Health += dice.Next(-3,6);
 
                     //cap health

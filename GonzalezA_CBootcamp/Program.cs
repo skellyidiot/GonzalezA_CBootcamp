@@ -25,17 +25,19 @@ namespace GonzalezA_CBootcamp
             //Statements.LoopingArrays();
             //Statements.ForEachIterations();
 
-            //MiniDC.StartDC();
+            //MadLib.Execute();
+
+            MiniDC.StartDC();
 
             //ErrorTrapping.Crash();
             //ErrorTrapping.SafeCrash();
 
-            StringWork.StringFeatures();
-            StringWork.Manipulate();
-            StringWork.JoinAndCompare();
-            StringWork.FindingSubStrings();
-            StringWork.Formatting();
-            StringWork.DateStrings();
+            //StringWork.StringFeatures();
+            //StringWork.Manipulate();
+            //StringWork.JoinAndCompare();
+            //StringWork.FindingSubStrings();
+            //StringWork.Formatting();
+            //StringWork.DateStrings();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace GonzalezA_CBootcamp
         {
             //https://docs.microsoft.com/en-us/dotnet/api/system.array.length?view=net-5.0
             //Console.WriteLine(loc.Rank);
+            Console.WriteLine("** They pull out a map of the surrounding area. **");
 
             int xDim = loc.GetUpperBound(0);
             int yDim = loc.GetUpperBound(1);
@@ -31,17 +32,17 @@ namespace GonzalezA_CBootcamp
             {
                 for (int x = 0; x <= xDim; x++)
                 {
-                    string locName = "*";
+                    string locName = "░░";
 
                     //if (loc[x, y].LocationName != null || loc[x, y].MonsterID != 0)
                     if (loc[x, y] != null)
                     {
-                        locName = loc[x, y].LocationName.Substring(0, 1);
-                        //locName = "+";
+                        //locName = loc[x, y].LocationName.Substring(0, 1);
+                        locName = "▓▓";
                     }
                     if (x == playerX && y == playerY)
                     {
-                        locName = "X";
+                        locName = "◄►";
                     }
                     Console.Write(locName);
                 }
