@@ -6,6 +6,7 @@ namespace GonzalezA_CBootcamp
 {
     public static class MiniDC
     {
+        static bool key = false;
         //Method
         public static void StartDC()
         {
@@ -19,15 +20,17 @@ namespace GonzalezA_CBootcamp
             Console.ReadLine();
 
             //Create some monsters...
-            Player[] monster = new Player[6];
+            Player[] monster = new Player[7];
             monster[0] = new Player(0, "", 0);
             monster[1] = new Player(1, "Goblo the Giant", 25);
             monster[2] = new Player(2, "The Wizard of D'nal", 5);
             monster[3] = new Player(3, "Landon the Lancer", 15);
             monster[4] = new Player(4, "Griffin the Gryfin", 20);
             monster[5] = new Player(5, "Greg", 125);
+            monster[6] = new Player(6, "La Chupacabra", 42);
 
-            //Create some locations
+            //Create some locations-		$exception	{"Index was outside the bounds of the array."}	System.IndexOutOfRangeException
+
             int maxX = 11;
             int maxY = 11;
             //create a 2D array of locations
@@ -36,8 +39,13 @@ namespace GonzalezA_CBootcamp
             location[5, 5] = new Location("Home", "A strange yet familiar house. You find comfort by the warm fireplace.", 0);
             location[4, 4] = new Location("Getel", "A small town with a magical fountain.", 2);
             location[7, 7] = new Location("A Huge Cavern", "You hear rumbling and stomping sounds.", 5);
-            location[9, 7] = new Location("The Soul Springs", "The ponds glimmer, filled with a blueish liquid. You step in the ponds, and feel refreshed.", 0);
-
+            location[9, 7] = new Location("The Soulless Springs", "The springs glimmer, filled with a blueish liquid.", 0);
+            location[2, 9] = new Location("An Abandoned House", "You checked the front door, but it was locked.", 6);
+            location[4, 2] = new Location("", "You found a red key on the ground. I wonder what it unlocks?", 0);
+            if (key == true)
+            {
+                location[2, 9] = new Location("An Abandoned House", "you win.", 6);
+            }
 
             //Place the player at home
             int pX = 5;
@@ -49,8 +57,7 @@ namespace GonzalezA_CBootcamp
             //Game start!
             while(true)                                       //basically a forever loop
             {
-                Console.Clear();
-
+ 
                 //display location and health
                 Console.WriteLine("\n---------------------------------");
                 Console.WriteLine("HEALTH: {0}", player.Health);
@@ -108,6 +115,10 @@ namespace GonzalezA_CBootcamp
 
                     //cap health
                     if (player.Health >= 60) player.Health = 60;
+                }
+                if(pX == 4 && pY == 2)
+                {
+                    key = true;
                 }
 
                 //Ask user for commands

@@ -40,10 +40,15 @@ namespace GonzalezA_CBootcamp
                         //locName = loc[x, y].LocationName.Substring(0, 1);
                         locName = "▓▓";
                     }
+                    if (x == 4 && y == 2)
+                    {
+                        locName = "░░";
+                    }
                     if (x == playerX && y == playerY)
                     {
                         locName = "◄►";
                     }
+                  
                     Console.Write(locName);
                 }
                 Console.WriteLine("");
