@@ -109,5 +109,81 @@ namespace GonzalezA_CBootcamp
             Console.WriteLine(birthday.DayOfWeek);
             Console.WriteLine(birthday.AddYears(51).DayOfWeek);
         }
+
+        public static void HomeworkChallenge()
+        {
+            string playerName;
+            string weaponList;
+            DateTime birthday;
+            string worldName;
+
+        playerName10:
+            Console.WriteLine("What is your name? It must be less than 10 characters long.");
+            playerName = Console.ReadLine();
+            playerName.Trim();
+            playerName.ToUpper();
+
+            if(playerName.Length >= 10)
+            {
+                Console.WriteLine("Can you not count or something? I said less than 10 characters. Try again.");
+                goto playerName10;
+            }
+            Console.WriteLine("Good job.\n");
+
+        playerNameZ:
+            Console.WriteLine("What is your name? It must start with a Z.");
+            playerName = Console.ReadLine().ToLower();
+
+
+            if(playerName.StartsWith("z") == false)
+            {
+                Console.WriteLine("Are you illiterate or something? I said start with Z. Try again.");
+                goto playerNameZ;
+            }
+            Console.WriteLine("Good job.\n");
+
+        weaponList:
+            Console.WriteLine("Write out a list of weapons, separated by commas.");
+            weaponList = Console.ReadLine();
+            weaponList.Trim();
+            string[] weapons = weaponList.Split(',');
+
+            foreach (string weapon in weapons)
+            {
+                Console.WriteLine(weapon);
+            }
+            Console.WriteLine("Cool list. Good job.\n");
+
+        birthday:
+            Console.WriteLine("What's your birthday? Enter it in MM/DD/YYYY format.");
+            try
+            {
+                birthday = Convert.ToDateTime(Console.ReadLine());
+            } catch
+            {
+                Console.WriteLine("Wrong, you didn't format it like I said. Try again.");
+                goto birthday;
+            }
+            Console.WriteLine("Very cool, you were born on a {0}.\n", birthday.DayOfWeek);
+
+        worldName:
+            Console.WriteLine("Name a planet, or different world.");
+            worldName = Console.ReadLine();
+            worldName.ToLower();
+
+            try
+            {
+                for (int i = 0; i < worldName.Length; i++)
+                {
+                    string letter = worldName.Substring(i, 1);
+                    string bean = (i%2 == 0) ? letter.ToUpper() : letter.ToLower(); 
+                    Console.Write(bean);
+                }
+            } catch
+            {
+                Console.WriteLine("\nwhy doesn't tHIS WORK");
+                goto worldName;
+            }
+        }
     }
 }

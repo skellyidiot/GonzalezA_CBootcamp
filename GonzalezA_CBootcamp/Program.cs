@@ -27,7 +27,7 @@ namespace GonzalezA_CBootcamp
 
             //MadLib.Execute();
 
-            MiniDC.StartDC();
+            //MiniDC.StartDC();
 
             //ErrorTrapping.Crash();
             //ErrorTrapping.SafeCrash();
@@ -38,6 +38,7 @@ namespace GonzalezA_CBootcamp
             //StringWork.FindingSubStrings();
             //StringWork.Formatting();
             //StringWork.DateStrings();
+            //StringWork.HomeworkChallenge();
         }
     }
 }
